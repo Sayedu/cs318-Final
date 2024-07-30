@@ -100,6 +100,7 @@ app.get('/login.html', (req, res) => {
 });
 
 // Create server
+
 const server = http.createServer(app);
 
 // Connect to MongoDB and start server
