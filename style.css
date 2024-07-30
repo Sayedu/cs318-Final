@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=FAMILY_NAME:wght@WEIGHT_OR_RANGE&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --light: #ccc6e1;
+    --primary: #1976d2;
+    --light-primary: #cfe8ff;
+    --grey: #fff;
+    --dark-grey: #aaaaaa;
+    --danger: #983a3a;
+    --light-danger: #fecdd3;
+    --warning: #fbc02d;
+    --light-warning: #fff2c6;
+    --light-success: #bbf7d0;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(152, 226, 220);
+    font-family: "poppins", sans-serif;
+
+}
+
+.container{
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--grey);
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px #472a9d;
+    overflow-x: hidden;
+
+}
+
+.container h2{
+    padding:2rem 0;
+    font-size: 4rem;
+    text-align: center;
+    color: var(--dark-grey);
+}
+
+.error_message{
+    background-color: var(--danger);
+    color: var(--light);
+    text-align: center;
+    padding: 1rem 0;
+    width: 650px;
+    margin: 0 auto;
+    border-radius: 10px;
+    display: none;
+}
+
+.error_message.error{
+    display: block;
+    transition: all 0.8s ease-in;
+}
+
+.budget_content{
+    padding: 2rem;
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.ur_budget form input,
+.ur_expenses form input{
+    padding: 0.4rem 1rem;
+    width: 300px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    border-radius: 100px;
+}
+
+.ur_budget form input:focus,
+.ur_expenses form input:focus {
+    outline:none
+}
+   
+.ur_budget form ,
+.ur_expenses form{
+    position: relative;
+}
+
+.budget_content .btn{
+    position: absolute;
+    right: 0;
+    outline: none;
+    border: none;
+    font-family: inherit;
+    padding: 0.6rem 1rem;
+    color: var(--light);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: rgb(58, 97, 83);
+
+}
+
+.budget_content .btn:active{
+    transform: scale(0.95);
+}
+
+.container .cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 1.5rem;
+    padding: 2rem;
+}
+
+.container .cards li{
+    padding: 1.8rem;
+    background-color: var(--light);
+    border-radius: 5px;
+    display: flex;
+    align-items: flex;
+    align-items: center;
+    gap: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+.container .cards li:hover{
+    transform: translateY(-10px);
+    
+}
+
+.container .cards li .bx{
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 20px;
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .cards li:nth-child(1) .bx{
+    background-color: rgb(88, 201, 148);
+    color: rgb(6, 82, 71);
+}
+
+.container .cards li:nth-child(2) .bx{
+    background-color: rgb(64, 66, 146);
+    color: darkblue;
+}
+
+.container .cards li:nth-child(3) .bx{
+    background-color: rgb(85, 154, 181);
+    color: rgb(14, 33, 55);
+}
+
+.container .cards li .info h3{
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgb(23, 67, 98);
+}
+
+
+.container  .cards li .info p{
+    color: rgb(23, 67, 98);
+}
+
+
+
+.tbl_content{
+    padding: 2rem;
+    background-color: var(--light);
+    margin: 1rem 2rem;
+    border-radius: 5px;
+
+}
+
+.tbl_content h3{
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.tbl_tr_content{
+    display: grid;
+    list-style-type: none;
+    grid-template-columns: 1fr 50% 30% 2fr;
+    align-items: center;
+    background-color: rgb(58, 58, 159);
+    color: var(--light);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+
+.tbl_data{
+    overflow-y: auto;
+    height: 150px;
+}
+
+.tbl_tr_content button{
+    outline: none;
+    border: none;
+    color: var(--light);
+    padding: 0.4rem;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--danger);
+}
+
+.tbl_tr_content button:active{
+    transform: scale(0.95);
+}
+
+.tbl_tr_content button:first-child{
+    background-color: rgb(23, 150, 23);
+}
+
+
+
+
+/* Additional styles for login and register forms */
+/* Ensure the parent container has enough width */
+.auth {
+    display: flex;
+    justify-content: center; /* Center the .auth container horizontally */
+    align-items: flex-start; /* Align items at the start (top) vertically */
+    margin: 20px auto; /* Center container horizontally and add top/bottom margins */
+    max-width: 800px; /* Set a maximum width */
+    width: 100%; /* Full width within the constraints of max-width */
+  }
+  
+  /* Ensuring the forms are centered within the .auth container */
+  .auth-form {
+    flex: 1; /* Allows forms to grow and shrink as needed */
+    max-width: 48%; /* Limit the maximum width of each form */
+    padding: 20px;
+    border: 1px solid var(--light-grey);
+    border-radius: 5px;
+    background-color: var(--light);
+    margin: 10px; /* Margin around each form */
+    box-sizing: border-box; /* Include padding and border in width calculations */
+    text-align: center; /* Center text and elements within the form */
+  }
+  
+  .auth-form h3 {
+    margin-bottom: 20px;
+  }
+  
+  .auth-form input, .auth-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--light-grey);
+    border-radius: 5px;
+  }
+  
+  .auth-form button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .auth-form button:hover {
+    background-color: var(--dark-grey);
+  }
+  
+  .login-btn {
+    display: flex;
+    padding: 10px 20px;
+    background-color: var(--primary); /* Primary color defined in your CSS variables */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    font-weight: bold; /* Make the text bold */
+    font-size: 1rem; /* Adjust font size */
+  }
+  
+  .login-btn:hover {
+    background-color: var(--dark-grey); /* Darker color for hover state */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Slightly more pronounced shadow on hover */
+  }
+  
+  .nav {
+    position: fixed; /* Make nav position absolute */
+    top: 50px; /* Adjust top positioning as needed */
+    right: 100px; /* Align to the right */
+  }
