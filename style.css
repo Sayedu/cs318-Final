@@ -24,18 +24,19 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: rgb(152, 226, 220);
+    background-color: rgb(2, 27, 25);
     font-family: "poppins", sans-serif;
 
 }
 
 .container{
+    position: relative;
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
     background-color: var(--grey);
     border-radius: 5px;
-    box-shadow: 5px 5px 10px #472a9d;
+    box-shadow: 50px 50px 100px #472a9d;
     overflow-x: hidden;
 
 }
@@ -229,25 +230,28 @@ body{
 /* Ensure the parent container has enough width */
 .auth {
     display: flex;
-    justify-content: center; /* Center the .auth container horizontally */
-    align-items: flex-start; /* Align items at the start (top) vertically */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     margin: 20px auto; /* Center container horizontally and add top/bottom margins */
-    max-width: 800px; /* Set a maximum width */
+    max-width: 100%; /* Ensure the container takes full width */
+    height: 100vh; /* Full height to center vertically */
+    padding: 20px; /* Padding to ensure content doesn't touch the edges */
+    box-sizing: border-box; /* Include padding in width/height calculations */
+}
+
+.auth-form {
+    max-width: 400px; /* Set a maximum width for the form */
     width: 100%; /* Full width within the constraints of max-width */
-  }
-  
-  /* Ensuring the forms are centered within the .auth container */
-  .auth-form {
-    flex: 1; /* Allows forms to grow and shrink as needed */
-    max-width: 48%; /* Limit the maximum width of each form */
     padding: 20px;
     border: 1px solid var(--light-grey);
     border-radius: 5px;
     background-color: var(--light);
-    margin: 10px; /* Margin around each form */
+    margin: 0 auto; /* Center form by auto margins */
     box-sizing: border-box; /* Include padding and border in width calculations */
     text-align: center; /* Center text and elements within the form */
-  }
+}
+
+
   
   .auth-form h3 {
     margin-bottom: 20px;
@@ -273,7 +277,10 @@ body{
   }
   
   .login-btn {
-    display: flex;
+    position: absolute; /* Use fixed if you want the button to always stay in the same spot on the screen */
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    display: inline-flex;
     padding: 10px 20px;
     background-color: var(--primary); /* Primary color defined in your CSS variables */
     color: white;
@@ -283,7 +290,8 @@ body{
     transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
     font-weight: bold; /* Make the text bold */
     font-size: 1rem; /* Adjust font size */
-  }
+    z-index: 1000; /* Ensure it stays above other elements */
+}
   
   .login-btn:hover {
     background-color: var(--dark-grey); /* Darker color for hover state */
@@ -295,3 +303,34 @@ body{
     top: 50px; /* Adjust top positioning as needed */
     right: 100px; /* Align to the right */
   }
+
+  /* Responsive Design */
+@media (max-width: 768px) {
+    .container h2 {
+        font-size: 1.5rem;
+    }
+
+    .ur_budget form input,
+    .ur_expenses form input {
+        width: 100%;
+    }
+
+    .budget_content {
+        padding: 1rem;
+    }
+
+    .tbl_content {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        padding: 1rem 0;
+    }
+
+    .tbl_tr_content {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0.5rem;
+    }
+}
